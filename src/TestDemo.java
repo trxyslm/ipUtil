@@ -3,12 +3,12 @@ package com.onewaveinc.ip.ip.service;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * <p>ÀàµÄÏêÏ¸ËµÃ÷</p>
+ * <p>ç±»çš„è¯¦ç»†è¯´æ˜</p>
  *
  * @author  Administrator
  * @version 1.00 2014-5-22 Administrator
- * <p>      9.99 2014-5-22 ĞŞ¸ÄÕßĞÕÃû ĞŞ¸ÄÄÚÈİËµÃ÷</p>
- * @see     ²Î¿¼Àà1
+ * <p>      9.99 2014-5-22 ä¿®æ”¹è€…å§“å ä¿®æ”¹å†…å®¹è¯´æ˜</p>
+ * @see     å‚è€ƒç±»1
  */
 
 /**
@@ -27,11 +27,11 @@ public class TestDemo {
 		} else {
 			mask = 24;
 		}
-		long start = ipToLong(ip); // µØÖ·
+		long start = ipToLong(ip); // åœ°å€
 
-		long number = ipCount(mask); // ipµØÖ·¸öÊı
+		long number = ipCount(mask); // ipåœ°å€ä¸ªæ•°
 
-		long lmask = maskToLong(mask); // ÑÚÂë
+		long lmask = maskToLong(mask); // æ©ç 
 
 		String startIp = (longToIP(start & lmask));
 
@@ -42,7 +42,7 @@ public class TestDemo {
 
 	}
 
-	// ¼ÆËã³öÑÚÂëÖ¸¶¨µÄIPµØÖ·¸öÊı Èç: 24
+	// è®¡ç®—å‡ºæ©ç æŒ‡å®šçš„IPåœ°å€ä¸ªæ•° å¦‚: 24
 
 	public static long ipCount(int mask) {
 
@@ -58,7 +58,7 @@ public class TestDemo {
 
 	}
 
-	// ·Ö¸îIPµØÖ·
+	// åˆ†å‰²IPåœ°å€
 
 	public static long[] splitIp(String ip) {
 
@@ -128,7 +128,7 @@ public class TestDemo {
 
 	}
 
-	// ½«10.0.0.0ĞÎÊ½µÄipµØÖ·×ª»»³É10½øÖÆÕûÊı
+	// å°†10.0.0.0å½¢å¼çš„ipåœ°å€è½¬æ¢æˆ10è¿›åˆ¶æ•´æ•°
 
 	public static long ipToLong(String str) {
 
@@ -148,7 +148,7 @@ public class TestDemo {
 
 	}
 
-	// ½«10.0.0.0ĞÎÊ½µÄÑÚÂëµØÖ·×ª»»³É10½øÖÆÕûÊı
+	// å°†10.0.0.0å½¢å¼çš„æ©ç åœ°å€è½¬æ¢æˆ10è¿›åˆ¶æ•´æ•°
 
 	public static long maskToLong(int mask) {
 
@@ -164,17 +164,17 @@ public class TestDemo {
 
 	}
 
-	// ½«10½øÖÆÕûÊıĞÎÊ½×ª»»³É127.0.0.1ĞÎÊ½µÄIPµØÖ·
+	// å°†10è¿›åˆ¶æ•´æ•°å½¢å¼è½¬æ¢æˆ127.0.0.1å½¢å¼çš„IPåœ°å€
 
 	public static String longToIP(long longIp) {
 
 		StringBuffer sb = new StringBuffer("");
 
-		sb.append(String.valueOf(longIp >>> 24));// ÓÒÒÆ24Î»
+		sb.append(String.valueOf(longIp >>> 24));// å³ç§»24ä½
 
 		sb.append(".");
 
-		sb.append(String.valueOf((longIp & 0x00FFFFFF) >>> 16)); // ½«¸ß8Î»ÖÃ0£¬È»ºóÓÒÒÆ16Î»
+		sb.append(String.valueOf((longIp & 0x00FFFFFF) >>> 16)); // å°†é«˜8ä½ç½®0ï¼Œç„¶åå³ç§»16ä½
 
 		sb.append(".");
 
